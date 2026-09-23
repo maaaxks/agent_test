@@ -130,8 +130,8 @@ def revise_node(state: ResearchState) -> dict:
 # routing finalize n revise
 def routing_after_review(state: ResearchState) -> Literal['finalize', 'revise']:
     if state.get('approved', False):
-        return 'revise'
-    return 'finalize'
+        return 'finalize'
+    return 'revise'
 
 # build graph
 
@@ -164,7 +164,7 @@ def main():
     result = research_agent.invoke({
         "messages": [HumanMessage(content=f"Research: {topic}")],
         "topic": topic,
-        "search_results": "",
+        "search_res": "",
         "draft_report": "",
         "approved": False,
         "final_report": "",
